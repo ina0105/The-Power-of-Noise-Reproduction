@@ -1,0 +1,32 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+Note: huggingface-cli login failed, but HF_TOKEN is set
+==========================================
+Running experiment: near scenario with random documents
+Number of documents: 13
+Gold position: 12
+Use random: True
+Batch size: 10
+==========================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading LLM...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.88s/it]
+[2025-11-15T16:54:23.279] error: *** JOB 16184423 ON gcn21 CANCELLED AT 2025-11-15T16:54:23 DUE to SIGNAL Terminated ***

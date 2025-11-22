@@ -1,0 +1,178 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+==========================================
+Evaluating Results for 1 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 0
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 1
+Gold position: 0
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/1_doc
+I'm using the following files:  ['numdoc1_gold_at0_rand_answerless_pad_gold_info_250.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/1_doc/numdoc1_gold_at0_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.5645
+
+
+==========================================
+Evaluating Results for 2 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 1
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 2
+Gold position: 1
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at1_rand_answerless_pad_gold_info_250.pkl', 'numdoc2_gold_at1_rand_answerless_pad_gold_info_286.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/2_doc/numdoc2_gold_at1_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.5586
+
+
+==========================================
+Evaluating Results for 3 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 2
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 3
+Gold position: 2
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/3_doc
+I'm using the following files:  ['numdoc3_gold_at2_rand_answerless_pad_gold_info_250.pkl', 'numdoc3_gold_at2_rand_answerless_pad_gold_info_400.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/3_doc/numdoc3_gold_at2_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.555
+
+
+==========================================
+Evaluating Results for 5 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 4
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 5
+Gold position: 4
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at4_rand_answerless_pad_gold_info_250.pkl', 'numdoc5_gold_at4_rand_answerless_pad_gold_info_400.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/5_doc/numdoc5_gold_at4_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.5612
+
+
+==========================================
+Evaluating Results for 7 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 6
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 7
+Gold position: 6
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at6_rand_answerless_pad_gold_info_250.pkl', 'numdoc7_gold_at6_rand_answerless_pad_gold_info_500.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/7_doc/numdoc7_gold_at6_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.5593
+
+
+==========================================
+Evaluating Results for 9 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 8
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 9
+Gold position: 8
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/9_doc
+I'm using the following files:  ['numdoc9_gold_at8_rand_answerless_pad_gold_info_250.pkl', 'numdoc9_gold_at8_rand_answerless_pad_gold_info_500.pkl', 'numdoc9_gold_at8_rand_answerless_pad_gold_info_667.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/9_doc/numdoc9_gold_at8_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.5585
+
+
+==========================================
+Evaluating Results for 11 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 10
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 11
+Gold position: 10
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/11_doc
+I'm using the following files:  ['numdoc11_gold_at10_rand_answerless_pad_gold_info_250.pkl', 'numdoc11_gold_at10_rand_answerless_pad_gold_info_500.pkl', 'numdoc11_gold_at10_rand_answerless_pad_gold_info_750.pkl', 'numdoc11_gold_at10_rand_answerless_pad_gold_info_1000.pkl']
+Overwriting existing file: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/11_doc/numdoc11_gold_at10_rand_answerless_pad_gold_info_all.json
+ACCURACY:  0.554
+
+
+==========================================
+Evaluating Results for 13 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 12
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 13
+Gold position: 12
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/13_doc
+I'm using the following files:  ['numdoc13_gold_at12_rand_answerless_pad_gold_info_250.pkl', 'numdoc13_gold_at12_rand_answerless_pad_gold_info_500.pkl', 'numdoc13_gold_at12_rand_answerless_pad_gold_info_750.pkl', 'numdoc13_gold_at12_rand_answerless_pad_gold_info_1000.pkl']
+ACCURACY:  0.5541
+
+
+==========================================
+Evaluating Results for 15 documents (near scenario, random, pad_gold)
+==========================================
+Gold position: 14
+
+==========================================
+Evaluating: near scenario with random documents (pad_gold)
+Number of documents: 15
+Gold position: 14
+Use random: True
+==========================================
+Directory:  data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/15_doc
+I'm using the following files:  ['numdoc15_gold_at14_rand_answerless_pad_gold_info_250.pkl', 'numdoc15_gold_at14_rand_answerless_pad_gold_info_500.pkl', 'numdoc15_gold_at14_rand_answerless_pad_gold_info_750.pkl', 'numdoc15_gold_at14_rand_answerless_pad_gold_info_1000.pkl']
+ACCURACY:  0.5504
+
+
+==========================================
+All evaluations completed!
+==========================================
+
+Summary: Accuracy values are printed above for each experiment.
+The detailed results are saved in: data/gen_res_pad_gold/Llama-2-7b-chat-hf/train/classic/contriever/
+Look for files ending with 'all_extended.json' for detailed results.

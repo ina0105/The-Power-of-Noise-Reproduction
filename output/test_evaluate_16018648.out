@@ -1,0 +1,131 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+==========================================
+Evaluating Results for 2 documents
+==========================================
+Gold positions: far=0, mid=1, near=1
+
+==========================================
+Evaluating Results for Table 2: Random Documents (2 docs)
+==========================================
+==========================================
+Evaluating: far scenario with random documents
+Number of documents: 2
+Gold position: 0
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at0_rand_answerless_info_250.pkl', 'numdoc2_gold_at0_rand_answerless_info_334.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc/numdoc2_gold_at0_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: mid scenario with random documents
+Number of documents: 2
+Gold position: 1
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at1_rand_answerless_info_200.pkl']
+ACCURACY:  0.4878
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 2
+Gold position: 1
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at1_rand_answerless_info_200.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc/numdoc2_gold_at1_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating Results for Table 1: Relevant/Distracting Documents (2 docs)
+==========================================
+==========================================
+Evaluating: far scenario with relevant documents
+Number of documents: 2
+Gold position: 0
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at0_answerless_info_250.pkl', 'numdoc2_gold_at0_answerless_info_334.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc/numdoc2_gold_at0_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: mid scenario with relevant documents
+Number of documents: 2
+Gold position: 1
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at1_answerless_info_200.pkl']
+ACCURACY:  0.4284
+
+==========================================
+Evaluating: near scenario with relevant documents
+Number of documents: 2
+Gold position: 1
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at1_answerless_info_200.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/2_doc/numdoc2_gold_at1_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+
+==========================================
+All evaluations completed!
+==========================================
+
+Summary: Accuracy values are printed above for each experiment.
+The detailed results are saved in: data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/
+Look for files ending with 'all_extended.json' for detailed results.

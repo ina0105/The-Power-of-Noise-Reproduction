@@ -1,0 +1,1 @@
+You are given a question and you MUST respond by EXTRACTING the answer from one of the provided documents.

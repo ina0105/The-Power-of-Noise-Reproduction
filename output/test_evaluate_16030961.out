@@ -1,0 +1,235 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+==========================================
+Evaluating Results for 5 documents
+==========================================
+Gold positions: far=0, mid=2, near=4
+
+==========================================
+Evaluating Results for Table 2: Random Documents (5 docs)
+==========================================
+==========================================
+Evaluating: far scenario with random documents
+Number of documents: 5
+Gold position: 0
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at0_rand_answerless_info_250.pkl', 'numdoc5_gold_at0_rand_answerless_info_500.pkl', 'numdoc5_gold_at0_rand_answerless_info_750.pkl', 'numdoc5_gold_at0_rand_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc/numdoc5_gold_at0_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: mid scenario with random documents
+Number of documents: 5
+Gold position: 2
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at2_rand_answerless_info_250.pkl', 'numdoc5_gold_at2_rand_answerless_info_500.pkl', 'numdoc5_gold_at2_rand_answerless_info_750.pkl', 'numdoc5_gold_at2_rand_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc/numdoc5_gold_at2_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 5
+Gold position: 4
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at4_rand_answerless_info_250.pkl', 'numdoc5_gold_at4_rand_answerless_info_500.pkl', 'numdoc5_gold_at4_rand_answerless_info_750.pkl', 'numdoc5_gold_at4_rand_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc/numdoc5_gold_at4_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating Results for Table 1: Relevant/Distracting Documents (5 docs)
+==========================================
+==========================================
+Evaluating: far scenario with relevant documents
+Number of documents: 5
+Gold position: 0
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at0_answerless_info_250.pkl', 'numdoc5_gold_at0_answerless_info_500.pkl', 'numdoc5_gold_at0_answerless_info_750.pkl', 'numdoc5_gold_at0_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc/numdoc5_gold_at0_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: mid scenario with relevant documents
+Number of documents: 5
+Gold position: 2
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at2_answerless_info_250.pkl', 'numdoc5_gold_at2_answerless_info_500.pkl', 'numdoc5_gold_at2_answerless_info_750.pkl', 'numdoc5_gold_at2_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc/numdoc5_gold_at2_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: near scenario with relevant documents
+Number of documents: 5
+Gold position: 4
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/5_doc
+I'm using the following files:  ['numdoc5_gold_at4_answerless_info_250.pkl', 'numdoc5_gold_at4_answerless_info_500.pkl']
+ACCURACY:  0.3781
+
+
+==========================================
+Evaluating Results for 7 documents
+==========================================
+Gold positions: far=0, mid=3, near=6
+
+==========================================
+Evaluating Results for Table 2: Random Documents (7 docs)
+==========================================
+==========================================
+Evaluating: far scenario with random documents
+Number of documents: 7
+Gold position: 0
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at0_rand_answerless_info_250.pkl', 'numdoc7_gold_at0_rand_answerless_info_500.pkl', 'numdoc7_gold_at0_rand_answerless_info_750.pkl', 'numdoc7_gold_at0_rand_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc/numdoc7_gold_at0_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: mid scenario with random documents
+Number of documents: 7
+Gold position: 3
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at3_rand_answerless_info_250.pkl', 'numdoc7_gold_at3_rand_answerless_info_500.pkl', 'numdoc7_gold_at3_rand_answerless_info_750.pkl', 'numdoc7_gold_at3_rand_answerless_info_1000.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc/numdoc7_gold_at3_rand_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 7
+Gold position: 6
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at6_rand_answerless_info_250.pkl', 'numdoc7_gold_at6_rand_answerless_info_500.pkl']
+ACCURACY:  0.5663
+
+==========================================
+Evaluating Results for Table 1: Relevant/Distracting Documents (7 docs)
+==========================================
+==========================================
+Evaluating: far scenario with relevant documents
+Number of documents: 7
+Gold position: 0
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at0_answerless_info_250.pkl', 'numdoc7_gold_at0_answerless_info_500.pkl']
+File data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc/numdoc7_gold_at0_answerless_info_all.json already exists. Overwrite? (y/n): Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 270, in main
+    data_path = save_data_to_json(data_df, directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 150, in save_data_to_json
+    overwrite = input(f"File {data_path} already exists. Overwrite? (y/n): ")
+EOFError: EOF when reading a line
+
+==========================================
+Evaluating: mid scenario with relevant documents
+Number of documents: 7
+Gold position: 3
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at3_answerless_info_250.pkl', 'numdoc7_gold_at3_answerless_info_500.pkl']
+ACCURACY:  0.2692
+
+==========================================
+Evaluating: near scenario with relevant documents
+Number of documents: 7
+Gold position: 6
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at6_answerless_info_250.pkl', 'numdoc7_gold_at6_answerless_info_500.pkl']
+ACCURACY:  0.3886
+
+
+==========================================
+All evaluations completed!
+==========================================
+
+Summary: Accuracy values are printed above for each experiment.
+The detailed results are saved in: data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/
+Look for files ending with 'all_extended.json' for detailed results.

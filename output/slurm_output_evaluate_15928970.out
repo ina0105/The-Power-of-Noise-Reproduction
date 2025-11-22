@@ -1,0 +1,139 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+==========================================
+Evaluating Results for Table 1: Random Documents
+==========================================
+==========================================
+Evaluating: far scenario with random documents
+Gold position: 0
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at0_rand_answerless_info_250.pkl', 'numdoc7_gold_at0_rand_answerless_info_500.pkl', 'numdoc7_gold_at0_rand_answerless_info_750.pkl', 'numdoc7_gold_at0_rand_answerless_info_1000.pkl']
+ACCURACY:  0.3543
+
+==========================================
+Evaluating: mid scenario with random documents
+Gold position: 3
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  ['numdoc7_gold_at3_rand_answerless_info_250.pkl', 'numdoc7_gold_at3_rand_answerless_info_500.pkl', 'numdoc7_gold_at3_rand_answerless_info_750.pkl', 'numdoc7_gold_at3_rand_answerless_info_1000.pkl']
+ACCURACY:  0.4133
+
+==========================================
+Evaluating: near scenario with random documents
+Gold position: 6
+Use random: True
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  []
+Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 269, in main
+    data_df = load_pickle_files(directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 138, in load_pickle_files
+    data_df['document_indices'] = data_df['document_indices'].apply(convert_tensors)
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'document_indices'
+
+==========================================
+Evaluating Results for Table 2: Relevant/Distracting Documents
+==========================================
+==========================================
+Evaluating: far scenario with relevant documents
+Gold position: 0
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  []
+Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 269, in main
+    data_df = load_pickle_files(directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 138, in load_pickle_files
+    data_df['document_indices'] = data_df['document_indices'].apply(convert_tensors)
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'document_indices'
+
+==========================================
+Evaluating: mid scenario with relevant documents
+Gold position: 3
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  []
+Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 269, in main
+    data_df = load_pickle_files(directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 138, in load_pickle_files
+    data_df['document_indices'] = data_df['document_indices'].apply(convert_tensors)
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'document_indices'
+
+==========================================
+Evaluating: near scenario with relevant documents
+Gold position: 6
+Use random: False
+==========================================
+Directory:  data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc
+I'm using the following files:  []
+Traceback (most recent call last):
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 269, in main
+    data_df = load_pickle_files(directory, filename_prefix)
+  File "/gpfs/home1/scur2158/The-Power-of-Noise/src/read_generation_results.py", line 138, in load_pickle_files
+    data_df['document_indices'] = data_df['document_indices'].apply(convert_tensors)
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/sw/arch/RHEL9/EB_production/2025/software/Anaconda3/2025.06-1/lib/python3.13/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'document_indices'
+
+==========================================
+All evaluations completed!
+==========================================
+
+Summary: Accuracy values are printed above for each experiment.
+The detailed results are saved in: data/gen_res/Llama-2-7b-chat-hf/train/classic/contriever/7_doc/
+Look for files ending with 'all_extended.json' for detailed results.
