@@ -1,0 +1,186 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+Note: huggingface-cli login failed, but HF_TOKEN is set
+HF_TOKEN is set (length: 37 characters)
+==========================================
+Running experiment: near scenario with random documents
+Number of documents: 1
+Gold position: 0
+Use random: True
+Batch size: 40
+Model: meta-llama/Meta-Llama-3-8B-Instruct (Unquantized)
+Backend: True
+==========================================
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[2025-12-01 10:32:15] WARNING _login.py:409: Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Loading LLM...
+Successfully logged in to HuggingFace Hub
+Initializing vLLM engine with model: meta-llama/Meta-Llama-3-8B-Instruct
+Quantization: None
+Tensor parallel size: 1
+Max model length: 4096
+HF token available in environment (token length: 37 chars)
+vLLM will use environment variable or HuggingFace cache for authentication
+INFO 12-01 10:32:16 [utils.py:253] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'max_model_len': 4096, 'disable_log_stats': True, 'model': 'meta-llama/Meta-Llama-3-8B-Instruct'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 12-01 10:32:16 [model.py:631] Resolved architecture: LlamaForCausalLM
+INFO 12-01 10:32:16 [model.py:1745] Using max model len 4096
+INFO 12-01 10:32:17 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:17 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='meta-llama/Meta-Llama-3-8B-Instruct', speculative_config=None, tokenizer='meta-llama/Meta-Llama-3-8B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=meta-llama/Meta-Llama-3-8B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 512, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:19 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://145.136.62.58:39485 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:19 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:19 [gpu_model_runner.py:3259] Starting to load model meta-llama/Meta-Llama-3-8B-Instruct...
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m [2025-12-01 10:32:20] INFO _optional_torch_c_dlpack.py:119: JIT-compiling torch-c-dlpack-ext to cache...
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:22 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:22 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:05<00:15,  5.30s/it]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:10<00:10,  5.50s/it]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:12<00:03,  3.60s/it]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:17<00:00,  4.32s/it]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:17<00:00,  4.43s/it]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m 
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:40 [default_loader.py:314] Loading weights took 17.80 seconds
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:41 [gpu_model_runner.py:3338] Model loading took 14.9596 GiB memory and 20.998598 seconds
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:49 [backends.py:631] Using cache directory: /home/scur2158/.cache/vllm/torch_compile_cache/d667b38135/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:49 [backends.py:647] Dynamo bytecode transform time: 7.81 s
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:52 [backends.py:210] Directly load the compiled graph(s) for dynamic shape from the cache, took 2.707 s
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:54 [monitor.py:34] torch.compile takes 10.51 s in total
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:56 [gpu_worker.py:359] Available KV cache memory: 19.31 GiB
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:56 [kv_cache_utils.py:1229] GPU KV cache size: 158,192 tokens
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:32:56 [kv_cache_utils.py:1234] Maximum concurrency for 4,096 tokens per request: 38.62x
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:02, 17.09it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:02, 17.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:02, 17.85it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:02, 18.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 11/51 [00:00<00:02, 19.28it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:00<00:01, 19.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:00<00:01, 20.61it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:00<00:01, 21.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 23/51 [00:01<00:01, 22.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 26/51 [00:01<00:01, 22.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 29/51 [00:01<00:00, 22.29it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:01<00:00, 22.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  69%|██████▊   | 35/51 [00:01<00:00, 23.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 38/51 [00:01<00:00, 24.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|████████  | 41/51 [00:01<00:00, 24.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 44/51 [00:01<00:00, 25.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  92%|█████████▏| 47/51 [00:02<00:00, 25.80it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  98%|█████████▊| 50/51 [00:02<00:00, 26.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 22.76it/s]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   6%|▌         | 2/35 [00:00<00:01, 19.69it/s]Capturing CUDA graphs (decode, FULL):  14%|█▍        | 5/35 [00:00<00:01, 23.13it/s]Capturing CUDA graphs (decode, FULL):  23%|██▎       | 8/35 [00:00<00:01, 24.19it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 11/35 [00:00<00:00, 24.87it/s]Capturing CUDA graphs (decode, FULL):  40%|████      | 14/35 [00:00<00:00, 25.43it/s]Capturing CUDA graphs (decode, FULL):  49%|████▊     | 17/35 [00:00<00:00, 25.90it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 20/35 [00:00<00:00, 26.32it/s]Capturing CUDA graphs (decode, FULL):  66%|██████▌   | 23/35 [00:00<00:00, 26.86it/s]Capturing CUDA graphs (decode, FULL):  74%|███████▍  | 26/35 [00:01<00:00, 27.54it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▌ | 30/35 [00:01<00:00, 28.65it/s]Capturing CUDA graphs (decode, FULL):  97%|█████████▋| 34/35 [00:01<00:00, 29.57it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:01<00:00, 27.15it/s]
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:33:00 [gpu_model_runner.py:4244] Graph capturing finished in 4 secs, took 0.50 GiB
+[1;36m(EngineCore_DP0 pid=1080085)[0;0m INFO 12-01 10:33:00 [core.py:250] init engine (profile, create kv cache, warmup model) took 18.97 seconds
+INFO 12-01 10:33:01 [llm.py:352] Supported tasks: ['generate']
+vLLM engine initialized successfully
+LLM loaded
+Loading corpus and search results...
+Corpus and search results loaded
+Loading prompt dataset...
+Prompt dataset loaded
+INFO:
+DATA: data/10k_train_dataset.json
+MODEL: meta-llama/Meta-Llama-3-8B-Instruct
+BACKEND: vLLM
+QUANTIZATION: None
+USE RANDOM IN CONTEXT: True
+USE ADORE: False
+GOLD POSITION: 0
+NUM DOCUMENTS IN CONTEXT: 1
+DOCUMENTS WITHOUT ANSWER: True
+REPEAT GOLD: False
+PAD GOLD: False
+BATCH SIZE: 40
+SAVE EVERY: 250
+  0%|          | 0/250 [00:00<?, ?it/s]
+================================================================================
+DEBUG: Processing first batch (index 0)
+================================================================================
+Batch size: 40
+First prompt in batch (raw from dataset):
+--------------------------------------------------------------------------------
+You are given a question and you MUST respond by EXTRACTING only the complete answer from one of the provided documents. If none of the documents contain the answer, respond with NO-RES.
+Documents:
+Document [20970735](Title: List of death row inmates in the United States) As of June 14 , 2018 , there were 2,718 death row inmates in the United States . The number of death row inmates changes daily with new convictions , appellate decisions overturning conviction or sentence alone , commutations , or deaths ( through execution or otherwise ) . Due to this fluctuation as well as lag and inconsistencies in inmate reporting procedures across jurisdictions , the information in this article may be out of date .
+Question: total number of death row inmates in the us
+Answer:
+--------------------------------------------------------------------------------
+
+
+================================================================================
+DEBUG: Chat template check
+  Model ID: meta-llama/Meta-Llama-3-8B-Instruct
+  Chat template available: True
+  Using chat template: True
+================================================================================
+
+
+================================================================================
+DEBUG: First prompt transformation (index 0)
+================================================================================
+
+RAW PROMPT (before chat template):
+--------------------------------------------------------------------------------
+You are given a question and you MUST respond by EXTRACTING only the complete answer from one of the provided documents. If none of the documents contain the answer, respond with NO-RES.
+Documents:
+Document [20970735](Title: List of death row inmates in the United States) As of June 14 , 2018 , there were 2,718 death row inmates in the United States . The number of death row inmates changes daily with new convictions , appellate decisions overturning conviction or sentence alone , commutations , or deaths ( through execution or otherwise ) . Due to this fluctuation as well as lag and inconsistencies in inmate reporting procedures across jurisdictions , the information in this article may be out of date .
+Question: total number of death row inmates in the us
+Answer:
+--------------------------------------------------------------------------------
+
+PARSED COMPONENTS:
+  System message: 'You are given a question and you MUST respond by EXTRACTING only the complete answer from one of the provided documents. If none of the documents contain the answer, respond with NO-RES.'...
+  User message: 'Documents:\nDocument [20970735](Title: List of death row inmates in the United States) As of June 14 , 2018 , there were 2,718 death row inmates in the United States . The number of death row inmates c'...
+
+FORMATTED PROMPT (after chat template):
+--------------------------------------------------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are given a question and you MUST respond by EXTRACTING only the complete answer from one of the provided documents. If none of the documents contain the answer, respond with NO-RES.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Documents:
+Document [20970735](Title: List of death row inmates in the United States) As of June 14 , 2018 , there were 2,718 death row inmates in the United States . The number of death row inmates changes daily with new convictions , appellate decisions overturning conviction or sentence alone , commutations , or deaths ( through execution or otherwise ) . Due to this fluctuation as well as lag and inconsistencies in inmate reporting procedures across jurisdictions , the information in this article may be out of date .
+Question: total number of death row inmates in the us<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+--------------------------------------------------------------------------------
+
+
+Adding requests:   0%|          | 0/40 [00:00<?, ?it/s][AAdding requests: 100%|██████████| 40/40 [00:00<00:00, 750.25it/s]
+
+Processed prompts:   0%|          | 0/40 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts:   2%|▎         | 1/40 [00:00<00:17,  2.25it/s, est. speed input: 386.58 toks/s, output: 17.98 toks/s][A
+Processed prompts:  25%|██▌       | 10/40 [00:00<00:01, 23.57it/s, est. speed input: 3778.14 toks/s, output: 166.98 toks/s][A
+Processed prompts: 100%|██████████| 40/40 [00:00<00:00, 23.57it/s, est. speed input: 13749.87 toks/s, output: 911.14 toks/s][AProcessed prompts: 100%|██████████| 40/40 [00:00<00:00, 67.35it/s, est. speed input: 13749.87 toks/s, output: 911.14 toks/s]
+  0%|          | 0/250 [00:01<?, ?it/s]
+
+================================================================================
+DEBUG: First generated output (batch 0, item 0)
+================================================================================
+Raw generated output: 'The answer is:\n\n2,718'
+--------------------------------------------------------------------------------
+
+
+================================================================================
+DEBUG: First cleaned answer (batch 0, item 0)
+================================================================================
+Cleaned answer: 'The answer is: 2,718'
+Expected answer: N/A
+--------------------------------------------------------------------------------
+
+
+================================================================================
+DEBUG: Exiting after first batch as requested
+================================================================================
+
+Completed: near scenario with random documents (1 docs)
+
+==========================================
+All experiments completed!
+==========================================

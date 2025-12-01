@@ -1,0 +1,55 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+Note: huggingface-cli login failed, but HF_TOKEN is set
+==========================================
+Running experiment: near scenario with random documents
+Number of documents: 1
+Gold position: 0
+Use random: True
+Batch size: 40
+==========================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading LLM...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.92s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00,  9.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.03s/it]
+LLM loaded
+Loading corpus and search results...
+Corpus and search results loaded
+Loading prompt dataset...
+Prompt dataset loaded
+INFO:
+DATA: data/10k_train_dataset.json
+MODEL: meta-llama/Llama-2-7b-chat-hf
+USE RANDOM IN CONTEXT: True
+USE ADORE: False
+GOLD POSITION: 0
+NUM DOCUMENTS IN CONTEXT: 1
+DOCUMENTS WITHOUT ANSWER: True
+REPEAT GOLD: False
+PAD GOLD: False
+BATCH SIZE: 40
+SAVE EVERY: 250
+TEMPORARY FIX: Found existing checkpoint at batch 250. Skipping batches 0-250...
+  0%|          | 0/250 [00:00<?, ?it/s]  0%|          | 1/250 [00:00<00:38,  6.45it/s] 62%|██████▏   | 154/250 [00:00<00:00, 735.20it/s]100%|██████████| 250/250 [00:00<00:00, 727.32it/s]
+Completed: near scenario with random documents (1 docs)
+
+==========================================
+All experiments completed!
+==========================================

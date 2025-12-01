@@ -1,0 +1,106 @@
+## Summary: Cases where 1 doc fails but 11 doc succeeds
+
+### Statistics
+- Total compared: 10000 examples
+- Both correct: 3592 cases
+- Both incorrect: 4374 cases
+- Only 11 doc correct (1 doc fails): 1154 cases
+- Only 1 doc correct (11 doc fails): 880 cases
+- Answer was in documents but 1 doc still failed: 1154 (100.0% of mismatches)
+
+### Common failure patterns in 1 doc
+
+3. Wrong entity selection
+   - Example: "who is the law minister of india 2018"
+   - 1 doc: `According to Document [21002026], the law`
+   - 11 doc: `Ravi Shankar Prasad is the current law minister of India`
+   - Ground truth: ['Ravi Shankar Prasad']
+   - Example: "who plays angier's double in the prestige"
+   - 1 doc: `Gerald Root.`
+   - 11 doc: `Hugh Jackman`
+   - Ground truth: ['Hugh Jackman']
+   - Example: "who is considered to be the first pharaoh of egypt"
+   - 1 doc: `Menes
+
+Please let me know if you need anything else!`
+   - 11 doc: `Narmer/Menes`
+   - Ground truth: ['Narmer']
+   - Example: "who is captain teague in pirates of the caribbean"
+   - 1 doc: `Captain Edward Teague.
+
+Please provide the actual answer you extracted from`
+   - 11 doc: `Captain Edward Teague is Jack's father and the former pirate lord`
+   - Ground truth: ['played by Keith Richards', "Jack 's father"]
+   - Example: "who is the actress that plays shae in game of thrones"
+   - 1 doc: `The actress who plays Shae in the HBO series Game of Thron`
+   - 11 doc: `Sibel Kekilli`
+   - Ground truth: ['Sibel Kekilli']
+
+4. Comparison questions
+   - Example: "how many episodes does season 7 of shameless have"
+   - 1 doc: `According to the document, season 7 of Shameless has 1`
+   - 11 doc: `Season 7 of Shameless has 12 episodes.`
+   - Ground truth: ['12']
+   - Example: "the short distance movement of material between two or more points refers to"
+   - 1 doc: `(EXTRACTED FROM DOCUMENT 2100`
+   - 11 doc: `material handling`
+   - Ground truth: ['Material handling']
+   - Example: "who has more la liga titles real madrid or barcelona"
+   - 1 doc: `According to the document, Barcelona has won 25 La Liga titles,`
+   - 11 doc: `According to the document, Real Madrid has won the La Liga title a record`
+   - Ground truth: ['Real Madrid']
+   - Example: "when did be more chill the musical come out"
+   - 1 doc: `According to the document, the musical "Be More Chill" premiered`
+   - 11 doc: `Be More Chill the musical came out in 2015.`
+   - Ground truth: ['2015']
+   - Example: "who sang more more more how do you like it"
+   - 1 doc: `According to Document [21023450], "More`
+   - 11 doc: `The song "More, More, More" was performed by Andrea True Connection`
+   - Ground truth: ['Andrea True']
+
+5. Wrong answer extraction
+   - Example: "what is the last grade of high school"
+   - 1 doc: `Grade 12
+
+Please provide the answer to the question using`
+   - 11 doc: `Twelfth grade`
+   - Ground truth: ['Twelfth grade']
+   - Example: "what is the origin of the word cartoon"
+   - 1 doc: `The origin of the word "cartoon" can be traced back to`
+   - 11 doc: `The origin of the word cartoon is from Italian : cartone and Dutch`
+   - Ground truth: ['Italian : cartone', 'Dutch : karton']
+   - Example: "when did the story to kill a mockingbird take place"
+   - 1 doc: `According to the document, the story of "To Kill a Mockingbird`
+   - 11 doc: `According to the document, the story took place in 1936`
+   - Ground truth: ['1936 ,']
+   - Example: "who wrote my baby takes the morning train"
+   - 1 doc: `The answer to your question can be found in Document [2101`
+   - 11 doc: `Florrie Palmer`
+   - Ground truth: ['Florrie Palmer']
+   - Example: "who sang see the usa in a chevrolet"
+   - 1 doc: `According to the document, the following people sang "See the U.S`
+   - 11 doc: `Dinah Shore`
+   - Ground truth: ['Dinah Shore']
+
+### Insights
+
+1. More documents help with:
+   - Full name extraction (first + last)
+   - Disambiguation (character vs actor, entity selection)
+   - Comparison questions (requires multiple pieces of info)
+   - Context-dependent answers
+   - Better extraction from noisy/distracting contexts
+
+2. 11 doc advantages:
+   - 1154 cases where only 11 doc succeeds (1 doc fails)
+   - Better at finding answers that require more context
+   - More robust to noise from distracting documents
+   - Improved accuracy: 0.4746 (11 doc) vs 0.4472 (1 doc)
+
+3. All failures had the answer in the document, suggesting:
+   - Extraction/formatting issues
+   - Need for additional context to disambiguate
+   - Difficulty identifying the correct answer when multiple candidates exist
+   - Better prompt understanding with more context
+
+These results suggest that more documents (11) can improve accuracy, especially for questions requiring disambiguation, full names, or comparisons.

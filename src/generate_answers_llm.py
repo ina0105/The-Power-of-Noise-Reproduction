@@ -4,13 +4,17 @@ import warnings
 import re
 import glob
 from tqdm import tqdm
-from typing import Tuple, Dict, Optional
+from typing import Tuple, Dict, Optional, Union
 
 import torch
 from torch.utils.data import DataLoader
 from transformers import PreTrainedTokenizer
 
-from llm import LLM
+from llm import LLM as LLM_HF
+from llm_vllm import LLM as LLM_VLLM
+
+# Type alias for LLM (can be either HuggingFace or vLLM backend)
+LLM = Union[LLM_HF, LLM_VLLM]
 from utils import *
 from prompt_dataset import PromptDataset
 
@@ -44,6 +48,10 @@ def parse_arguments():
     parser.add_argument('--max_new_tokens', type=int, help='Maximum number of tokens to generate', default=15)
     parser.add_argument('--batch_size', type=int)
     parser.add_argument('--save_every', type=int, default=250)
+    parser.add_argument('--use_vllm', type=str2bool, help='Use vLLM backend instead of HuggingFace', default=False)
+    parser.add_argument('--quantization', type=str, help='Quantization method: "awq", "gptq", "fp8", or None. For HF: "4" or "8" for bitsandbytes', default=None)
+    parser.add_argument('--tensor_parallel_size', type=int, help='Number of GPUs for tensor parallelism (vLLM only)', default=1)
+    parser.add_argument('--dtype', type=str, help='Data type for model (vLLM only)', default='bfloat16')
 
     args = parser.parse_args()
 
@@ -125,6 +133,8 @@ def print_info(args: argparse.Namespace):
     print("INFO:")
     print(f"DATA: {info['data_path']}")
     print(f"MODEL: {args.llm_id}")
+    print(f"BACKEND: {'vLLM' if args.use_vllm else 'HuggingFace'}")
+    print(f"QUANTIZATION: {args.quantization or 'None'}")
     print(f"USE RANDOM IN CONTEXT: {args.use_random}")
     print(f"USE ADORE: {args.use_adore}")
     print(f"GOLD POSITION: {args.gold_position}")
@@ -182,12 +192,48 @@ def generate_and_save(
         if (idx + 1) <= skip_until:
             continue
         prompts = prompt_batch['prompt']
-        generated_output = llm.generate(prompts, max_new_tokens=args.max_new_tokens)
+        # vLLM handles batching internally, so we can pass the full list
+        if args.use_vllm:
+            generated_output = llm.generate(prompts, max_new_tokens=args.max_new_tokens, temperature=0.0, repetition_penalty=1.1)
+        else:
+            generated_output = llm.generate(prompts, max_new_tokens=args.max_new_tokens)
         
         generated_answers = []
         for output in generated_output:
-            start = output.find(answer_string_in_prompt) + len(answer_string_in_prompt)
-            response = output[start:].strip()
+            # vLLM returns only the generated text (not the prompt)
+            # So we should use the output directly, but clean it up
+            response = output.strip()
+            
+            # Clean up common issues:
+            # 1. Remove placeholder-like text (lines of underscores)
+            lines = response.split('\n')
+            cleaned_lines = []
+            for line in lines:
+                line = line.strip()
+                # Skip lines that are mostly underscores or placeholders
+                if line and len(line) > 2:
+                    # Check if line is mostly underscores
+                    if line.count('_') / len(line) > 0.7:
+                        continue
+                    # Stop at common continuation markers
+                    if 'extract' in line.lower() and ('token' in line.lower() or 'document' in line.lower()):
+                        break
+                    if line.startswith('Extract') or line.startswith('(extract'):
+                        break
+                    # Stop at new question markers
+                    if line.startswith('Question:') or line.startswith('Documents:'):
+                        break
+                    cleaned_lines.append(line)
+            
+            response = ' '.join(cleaned_lines).strip()
+            
+            # If response is still mostly underscores or very short placeholder, treat as empty
+            if response:
+                if response.count('_') / len(response) > 0.5:
+                    response = ""
+                elif len(response) < 3:
+                    response = ""
+            
             generated_answers.append(response)
 
         prompt_batch['generated_answer'] = generated_answers
@@ -205,11 +251,39 @@ def main():
 
     print("Loading LLM...")
     llm_id = args.llm_id
-    llm = LLM(
-        llm_id, device, quantization_bits=4, 
-        model_max_length=args.model_max_length
-    )
-    tokenizer = llm.tokenizer
+    
+    if args.use_vllm:
+        # Use vLLM backend
+        quantization = None
+        if args.quantization and args.quantization.strip():
+            quant_lower = args.quantization.lower().strip()
+            if quant_lower in ['awq', 'gptq', 'fp8']:
+                quantization = quant_lower
+            else:
+                print(f"Warning: Unknown quantization method '{args.quantization}' for vLLM, using None")
+        llm = LLM_VLLM(
+            model_id=llm_id,
+            quantization=quantization,
+            model_max_length=args.model_max_length,
+            tensor_parallel_size=args.tensor_parallel_size,
+            dtype=args.dtype,
+        )
+        tokenizer = llm.tokenizer
+    else:
+        # Use HuggingFace backend
+        quantization_bits = None
+        if args.quantization:
+            if args.quantization in ['4', '8']:
+                quantization_bits = int(args.quantization)
+            else:
+                print(f"Warning: For HuggingFace backend, quantization must be '4' or '8', got '{args.quantization}'. Using None.")
+        
+        llm = LLM_HF(
+            llm_id, device, quantization_bits=quantization_bits, 
+            model_max_length=args.model_max_length
+        )
+        tokenizer = llm.tokenizer
+    
     print("LLM loaded")
 
 

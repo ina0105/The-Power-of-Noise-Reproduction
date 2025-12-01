@@ -1,0 +1,112 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+
+EnvironmentNameNotFound: Could not find conda environment: power_of_noise
+You can list all discoverable environments with `conda info --envs`.
+
+
+==========================================
+Evaluating Results for 1 documents (near scenario, random)
+==========================================
+Gold position: 0
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 1
+Gold position: 0
+Use random: True
+==========================================
+Directory:  data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/1_doc
+I'm using the following files:  ['numdoc1_gold_at0_rand_answerless_info_250.pkl']
+Overwriting existing file: data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/1_doc/numdoc1_gold_at0_rand_answerless_info_all.json
+ACCURACY:  0.5378
+
+
+==========================================
+Evaluating Results for 2 documents (near scenario, random)
+==========================================
+Gold position: 1
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 2
+Gold position: 1
+Use random: True
+==========================================
+Directory:  data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/2_doc
+I'm using the following files:  ['numdoc2_gold_at1_rand_answerless_info_250.pkl']
+Overwriting existing file: data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/2_doc/numdoc2_gold_at1_rand_answerless_info_all.json
+ACCURACY:  0.468
+
+
+==========================================
+Evaluating Results for 9 documents (near scenario, random)
+==========================================
+Gold position: 8
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 9
+Gold position: 8
+Use random: True
+==========================================
+Directory:  data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/9_doc
+I'm using the following files:  ['numdoc9_gold_at8_rand_answerless_info_250.pkl', 'numdoc9_gold_at8_rand_answerless_info_500.pkl']
+Overwriting existing file: data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/9_doc/numdoc9_gold_at8_rand_answerless_info_all.json
+ACCURACY:  0.5232
+
+
+==========================================
+Evaluating Results for 11 documents (near scenario, random)
+==========================================
+Gold position: 10
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 11
+Gold position: 10
+Use random: True
+==========================================
+Directory:  data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/11_doc
+I'm using the following files:  ['numdoc11_gold_at10_rand_answerless_info_250.pkl', 'numdoc11_gold_at10_rand_answerless_info_500.pkl', 'numdoc11_gold_at10_rand_answerless_info_750.pkl', 'numdoc11_gold_at10_rand_answerless_info_1000.pkl']
+Overwriting existing file: data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/11_doc/numdoc11_gold_at10_rand_answerless_info_all.json
+ACCURACY:  0.5201
+
+
+==========================================
+Evaluating Results for 13 documents (near scenario, random)
+==========================================
+Gold position: 12
+
+==========================================
+Evaluating: near scenario with random documents
+Number of documents: 13
+Gold position: 12
+Use random: True
+==========================================
+Directory:  data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/13_doc
+I'm using the following files:  ['numdoc13_gold_at12_rand_answerless_info_250.pkl', 'numdoc13_gold_at12_rand_answerless_info_500.pkl', 'numdoc13_gold_at12_rand_answerless_info_750.pkl', 'numdoc13_gold_at12_rand_answerless_info_1000.pkl']
+Overwriting existing file: data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/13_doc/numdoc13_gold_at12_rand_answerless_info_all.json
+ACCURACY:  0.5427
+
+
+==========================================
+All evaluations completed!
+==========================================
+
+Summary: Accuracy values are printed above for each experiment.
+The detailed results are saved in: data/gen_res_prompt_ans_shortly/Llama-2-7b-chat-hf/train/classic/contriever/
+Look for files ending with 'all_extended.json' for detailed results.

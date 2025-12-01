@@ -585,7 +585,12 @@ class PromptDataset(Dataset):
 
 
     def build_qa_prompt(self, query: str, documents_str: str) -> str:
-        task_instruction = "You are given a question and you MUST respond by EXTRACTING the answer from one of the provided documents."
+        task_instruction = "You are given a question and you MUST respond by EXTRACTING the answer (max 5 tokens) from one of the provided documents. If none of the documents contain the answer, respond with NO-RES."
+        #task_instruction = "You are given a question and you MUST respond by EXTRACTING the answer (max 5 tokens) from the provided document. If the document does not contain the answer, respond with NO-RES."
+
+#        task_instruction = "You are given a question and you MUST respond with a short answer based on your internal knowledge. If you do not know the answer, please respond with NO-RES."
+        #task_instruction = "You are given a question and you MUST respond by EXTRACTING the answer from one of the provided documents."
+
         prompt = f"""{task_instruction}\nDocuments:\n{documents_str}\nQuestion: {query}\nAnswer:"""
 
         # Custom prompt format for mpt models

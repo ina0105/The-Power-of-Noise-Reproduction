@@ -2,11 +2,11 @@
 
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
-#SBATCH --job-name=EvaluateResultsPrompt
+#SBATCH --job-name=EvaluateLlama3Unquantized
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=9
 #SBATCH --time=00:15:00
-#SBATCH --output=output/test_evaluate_prompt_%A.out
+#SBATCH --output=output/test_evaluate_llama3_unquantized_%A.out
 
 module purge
 module load 2025
@@ -19,8 +19,8 @@ cd $HOME/The-Power-of-Noise
 conda activate power_of_noise
 
 # Configuration
-LLM_ID="meta-llama/Llama-2-7b-chat-hf"
-OUTPUT_DIR="data/gen_res_prompt_ans_only_3"
+LLM_ID="meta-llama/Meta-Llama-3-8B-Instruct"
+OUTPUT_DIR="data/gen_res_prompt_ans_only_llama3_unquantized_og"
 USE_TEST="False"
 PROMPT_TYPE="classic"
 USE_ADORE="False"
@@ -28,8 +28,7 @@ GET_DOCUMENTS_WITHOUT_ANSWER="True"
 
 # List of NUM_DOCUMENTS to evaluate
 # Should match the list in run_experiments.sh
-#NUM_DOCUMENTS_LIST=(1 2 9 11 13)
-NUM_DOCUMENTS_LIST=(1)
+NUM_DOCUMENTS_LIST=(11)
 
 # Function to evaluate experiment
 evaluate_experiment() {
@@ -41,6 +40,7 @@ evaluate_experiment() {
     echo "Number of documents: ${num_docs}"
     echo "Gold position: ${gold_position}"
     echo "Use random: True"
+    echo "Model: ${LLM_ID} (Unquantized)"
     echo "=========================================="
     
     python src/read_generation_results.py \
@@ -52,8 +52,7 @@ evaluate_experiment() {
         --use_adore ${USE_ADORE} \
         --gold_position ${gold_position} \
         --num_documents_in_context ${num_docs} \
-        --get_documents_without_answer ${GET_DOCUMENTS_WITHOUT_ANSWER} \
-        --overwrite True
+        --get_documents_without_answer ${GET_DOCUMENTS_WITHOUT_ANSWER}
     
     echo ""
 }
